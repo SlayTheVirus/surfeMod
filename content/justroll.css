@@ -1,0 +1,533 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), local('Montserrat'),
+    url('chrome-extension://manjolceoachljppbjhfgkoomnlidkna/fonts/Montserrat.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+#justroll {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: auto;
+  left:0;
+  right:0;
+  z-index: 9999999999;
+  overflow: hidden;
+  background: rgba(255,255,255,.85);
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  box-shadow: 0 0 25px rgba(100,100,140,0.4);
+}
+#justroll.anim {
+  transition: all .15s ease-in-out;
+}
+#justroll.jr_bottom {
+  bottom: 0px;
+  padding-bottom: 2px;
+}
+#justroll.jr_top {
+  top: 0px;
+  padding-top: 4px;
+}
+
+#justroll-panel-close {
+  width: 25px;
+  height: 25px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  z-index: 10;
+  transition: all .1s ease-in-out;
+}
+#justroll-panel-close:hover {
+  background: #333;
+  color: #fff;
+}
+
+#justroll-panel-position {
+  width: 25px;
+  height: 25px;
+  right: 25px;
+  top: 0;
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  z-index: 10;
+  padding-left: 1px;
+  line-height: 24px;
+  transition: all .1s ease-in-out;
+}
+#justroll-panel-position:hover {
+  background: #333;
+  color: #fff;
+}
+#justroll.jr_top #justroll-panel-position {
+  transform: rotate(90deg);
+}
+#justroll.jr_bottom #justroll-panel-position {
+  transform: rotate(270deg);
+}
+#justroll-panel-anim {
+  width: 25px;
+  height: 25px;
+  right: 50px;
+  top: 0;
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  z-index: 10;
+  padding-left: 1px;
+  line-height: 24px;
+  transition: all .1s ease-in-out;
+}
+#justroll-panel-anim:hover {
+  background: #333;
+  color: #fff;
+}
+
+#justroll-user {
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  width: 150px;
+  left: -135px;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  border-right: 1px solid rgb(230,230,230);
+  z-index: 10;
+  transition: all .15s ease-in-out;
+  border-radius: 0 5px 5px 0;
+}
+#justroll-user.opened {
+  left: 0;
+}
+
+#justroll-user-balance {
+  padding:  0 0 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+#justroll-user-banners {
+  padding: 3px 0;
+}
+#justroll-user-banners > * {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0 7px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+  color: black;
+  transition: all .15s ease-in-out;
+}
+#justroll-user-banners > *:hover {
+  background: rgba(70, 70, 70, 0.72);
+  color: white;
+}
+
+
+#justroll-user-hider {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  top: 0;
+  border-right: 3px solid #0088CC;
+  cursor: pointer;
+  z-index: 11;
+}
+#justroll-user-hider:hover {
+  background: #b9b9b933;
+}
+
+
+#justroll-logo {
+  position: absolute;
+  display: block;
+  bottom: 30px;
+  width: 130px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+#justroll-logo::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background: url('//static.surfe.be/images/surfebe_logo.png') no-repeat;
+  background-size: contain;
+  left: 50px;
+  margin-left: -42px;
+}
+
+#justroll-ver {
+  position: absolute;
+  font-size: 10px;
+  color: #aac;
+  bottom: 2px;
+  right: 10px;
+}
+
+#justroll-progressbar {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  z-index: 11;
+}
+.justroll-nanobar{
+  width:100%;
+  height:4px;
+  z-index:9999;
+  top:0
+}
+.justroll-bar{
+  width:0;
+  height:100%;
+  background: #38f;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #59d;
+}
+.jr_top #justroll-progressbar {
+  top: 0px!important;
+}
+#justroll.anim .justroll-bar {
+  transition: .3s;
+}
+
+
+
+
+
+
+
+
+
+
+#justroll-adv {
+  margin: 0 50px;
+  padding: 3px 0;
+  text-align: center;
+}
+
+#justroll-adv > * {
+  height: 66px;
+  display: inline-block;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+#justroll-adv-img {
+  width: 468px;
+}
+#justroll-adv span {
+  position: relative;
+}
+#justroll-adv span i {
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  font-family: sans-serif;
+  line-height: 17px;
+  text-align: center;
+  z-index: 10;
+  border-radius: 10px;
+  background: #333c;
+  display: none;
+}
+#justroll-adv span:hover i {
+  display: block;
+}
+
+#justroll-plus-wrap,#justroll-minus-wrap {
+  position: absolute;
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  z-index: 8;
+}
+#justroll-plus,#justroll-minus {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  color: black;
+  border-radius: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+}
+#justroll-plus:hover,#justroll-minus:hover {
+  background: #b9b9b9b8;
+  color: white;
+}
+#justroll-minus-wrap {
+  margin-left: -70px;
+}
+
+
+
+
+/* GUEST */
+
+#justroll-guest {
+  position: fixed;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  height: 80px;
+  bottom: -60px;
+  background: #fffe;
+  font-family: sans-serif;
+  z-index: 9999999999;
+  text-align: center;    
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  transition: all .15s ease-in-out;
+  box-shadow: 0 0 25px rgba(100,100,140,0.4);
+}
+#justroll-guest:hover, ._hovered {
+  bottom: 0!important;
+}
+#justroll-guest p {
+  text-align: center;
+  margin: 15px 0 10px;
+  font-size: 14px;
+  line-height: 10px;
+  font-style: italic;
+}
+
+#justroll-guest > * {
+  opacity: 0;
+}
+#justroll-guest:hover > *,
+#justroll-guest._hovered > * {
+  opacity: 1;
+}
+
+#justroll-btn-sign-in, #justroll-btn-sign-up {
+  display: inline-block;
+  text-align: center;
+  background: #222;
+  padding: 5px 25px;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  margin: 5px;
+  cursor: pointer;
+  width: auto;
+  min-width: 120px;
+  margin: 0 20px;
+  line-height: 18px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-stretch: 100%;
+  font-style: normal;
+  vertical-align: normal;
+
+}
+
+
+
+
+/* CLOSE DIALOG */
+
+#justroll-close_dialog {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: auto;
+  padding: 5px 10px;
+  z-index: 9999999999;
+  overflow: hidden;
+  border-left: 3px solid #0088CC;
+  background: rgb(255,255,255);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  box-shadow: 0 0 25px rgba(100,100,140,0.4);
+}
+
+
+#justroll-close_dialog-close {
+  width: 25px;
+  height: 25px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+  color: #333;
+  transition: all .10s ease-in-out;
+}
+#justroll-close_dialog-close:hover {
+  background: #333;
+  color: #fff;
+}
+
+.jr-close_dialog-li {
+  color: #337ab7;
+  cursor: pointer;
+  display: block;
+  line-height: 22px;
+  padding: 0 5px;
+  margin-right: 15px;
+}
+.jr-close_dialog-li:hover {
+  background: #b9b9b977;
+}
+
+
+.jr-close_dialog-ok {
+  height: 50px;
+  width: 50px;
+  background-color: #5cb85c;
+  -webkit-mask-image: url(https://static.surfe.be/svg/check-circle-solid.svg);
+  mask-image: url(https://static.surfe.be/svg/check-circle-solid.svg);
+}
+
+
+#justroll-captcha {
+  position: fixed;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  height: 80px;
+  bottom: -60px;
+  background: #fffe;
+  font-family: sans-serif;
+  z-index: 9999999999;
+  text-align: center;    
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  transition: all .15s ease-in-out;
+  box-shadow: 0 0 25px rgba(100,100,140,0.4);
+  border: 2px solid #333;
+}
+#justroll-captcha:hover {
+  bottom: -2px!important;
+}
+#justroll-captcha iframe {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+
+#justroll-notify {
+  position: fixed;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  height: 80px;
+  bottom: -100px;
+  background: #333;
+  font-family: sans-serif;
+  z-index: 9999999999;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: normal;
+  transition: all .15s ease-in-out;
+  box-shadow: 0 0 25px rgba(100,100,140,0.4);
+}
+#justroll-notify.show
+{
+  bottom: 5px;
+}
+#justroll-notify .justroll-notify-msg {
+  overflow: hidden;
+  margin-left: 80px;
+  width: 420px;
+  height: 100%;
+  color: #fff;
+  padding: 15px 5px;
+  line-height: 18px;
+  font-weight: 500;
+}
+iframe.justroll-notify-msg {
+  padding: 0!important;
+}
+#justroll-notify-logo {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ibGRpLTVxa3VtciIgd2lkdGg9IjM3N3B4IiAgaGVpZ2h0PSIzNzdweCIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgc3R5bGU9ImJhY2tncm91bmQ6IG5vbmU7Ij4gIDxzdmcgdmVyc2lvbj0iMS4xIiBpZD0ic3VyZmUuYmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9InRyYW5zZm9ybS1vcmlnaW46IDUwcHggNTBweCAwcHg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4gICAgPGcgc3R5bGU9InRyYW5zZm9ybS1vcmlnaW46IDUwcHggNTBweCAwcHg7Ij4gICAgICA8ZyBzdHlsZT0idHJhbnNmb3JtLW9yaWdpbjogNTBweCA1MHB4IDBweDsgdHJhbnNmb3JtOiBzY2FsZSgwLjYxKTsiPiAgICAgICAgPGcgc3R5bGU9InRyYW5zZm9ybS1vcmlnaW46IDUwcHggNTBweCAwcHg7Ij4gICAgICAgICAgPGc+ICAgICAgICAgICAgPGcgY2xhc3M9ImxkIGxkLWJyZWF0aCIgc3R5bGU9InRyYW5zZm9ybS1vcmlnaW46IDUwcHggNTBweCAwcHg7IGFuaW1hdGlvbi1kdXJhdGlvbjogMXM7IGFuaW1hdGlvbi1kZWxheTogLTAuODQ2MTU0czsgYW5pbWF0aW9uLWRpcmVjdGlvbjogbm9ybWFsOyI+ICAgICAgICAgICAgICA8cmVjdCB4PSI1IiB5PSItMTAiIHRyYW5zZm9ybT0ibWF0cml4KDQuNDkwMTAzZS0xMSAtMSAxIDQuNDkwMTAzZS0xMSAtMTguOTc0NiAxMDAuMzQpIHJvdGF0ZSg5MCA1MCA1MCkiIHN0eWxlPSJmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIzMCIgZmlsbD0iIzAwMDAwMCI+PC9yZWN0PiAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8ZyBjbGFzcz0ibGQgbGQtYnJlYXRoIiBzdHlsZT0iIGFuaW1hdGlvbi1kdXJhdGlvbjogMXM7IGFuaW1hdGlvbi1kZWxheTogLTFzOyBhbmltYXRpb24tZGlyZWN0aW9uOiBub3JtYWw7Ij4gICAgICAgICAgICAgIDxyZWN0IHg9IjI5IiB5PSIxMiIgdHJhbnNmb3JtPSJtYXRyaXgoNC40ODg2ODJlLTExIC0xIDEgNC40ODg2ODJlLTExIC04LjM5NDggMTI3LjAyODgpIHJvdGF0ZSg5MCA1MCA1MCkiIHN0eWxlPSJmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyIgd2lkdGg9Ijg1IiBoZWlnaHQ9IjMwIiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxnIGNsYXNzPSJsZCBsZC1icmVhdGgiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiA1MHB4IDUwcHggMHB4OyBhbmltYXRpb24tZHVyYXRpb246IDFzOyBhbmltYXRpb24tZGVsYXk6IC0wLjc2OTIzMXM7IGFuaW1hdGlvbi1kaXJlY3Rpb246IG5vcm1hbDsiPiAgICAgICAgICAgICAgPHJlY3QgeD0iNTgiIHk9IjMzIiB0cmFuc2Zvcm09Im1hdHJpeCg0LjQ4OTkyNmUtMTEgLTEgMSA0LjQ4OTkyNmUtMTEgMC44MzUxIDE1NS4wNjg5KSByb3RhdGUoOTAgNTAgNTApIiBzdHlsZT0iZmlsbDogcmdiKDI1NSwyNTUsMjU1KTsiIHdpZHRoPSI0Ni41IiBoZWlnaHQ9IjMwIiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxtZXRhZGF0YSB4bWxuczpkPSJodHRwczovL2xvYWRpbmcuaW8vc3RvY2svIiBjbGFzcz0ibGQgbGQtYnJlYXRoIiBzdHlsZT0idHJhbnNmb3JtLW9yaWdpbjogNTBweCA1MHB4IDBweDsgYW5pbWF0aW9uLWR1cmF0aW9uOiAxczsgYW5pbWF0aW9uLWRlbGF5OiAtMC42OTIzMDhzOyBhbmltYXRpb24tZGlyZWN0aW9uOiBub3JtYWw7Ij4gICAgICAgICAgICAgIDxkOm5hbWUgY2xhc3M9ImxkIGxkLWJyZWF0aCIgc3R5bGU9InRyYW5zZm9ybS1vcmlnaW46IDUwcHggNTBweCAwcHg7IGFuaW1hdGlvbi1kdXJhdGlvbjogMXM7IGFuaW1hdGlvbi1kZWxheTogLTAuNjE1Mzg1czsgYW5pbWF0aW9uLWRpcmVjdGlvbjogbm9ybWFsOyI+YmFyPC9kOm5hbWU+ICAgICAgICAgICAgICA8ZDp0YWdzIGNsYXNzPSJsZCBsZC1icmVhdGgiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiA1MHB4IDUwcHggMHB4OyBhbmltYXRpb24tZHVyYXRpb246IDFzOyBhbmltYXRpb24tZGVsYXk6IC0wLjUzODQ2MnM7IGFuaW1hdGlvbi1kaXJlY3Rpb246IG5vcm1hbDsiPmJhcixjb2x1bW4sbGV2ZWwscmVjdGFuZ2xlLGNvbXBhcmUsc2lnbmFsLGNoYXJ0PC9kOnRhZ3M+ICAgICAgICAgICAgICA8ZDpsaWNlbnNlIGNsYXNzPSJsZCBsZC1icmVhdGgiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiA1MHB4IDUwcHggMHB4OyBhbmltYXRpb24tZHVyYXRpb246IDFzOyBhbmltYXRpb24tZGVsYXk6IC0wLjQ2MTUzOHM7IGFuaW1hdGlvbi1kaXJlY3Rpb246IG5vcm1hbDsiPmNjLWJ5PC9kOmxpY2Vuc2U+ICAgICAgICAgICAgICA8ZDpzbHVnIGNsYXNzPSJsZCBsZC1icmVhdGgiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOiA1MHB4IDUwcHggMHB4OyBhbmltYXRpb24tZHVyYXRpb246IDFzOyBhbmltYXRpb24tZGVsYXk6IC0wLjM4NDYxNXM7IGFuaW1hdGlvbi1kaXJlY3Rpb246IG5vcm1hbDsiPjVxa3VtcjwvZDpzbHVnPiAgICAgICAgICAgIDwvbWV0YWRhdGE+ICAgICAgICAgIDwvZz4gICAgICAgIDwvZz4gICAgICA8L2c+ICAgIDwvZz4gICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj5wYXRoLGVsbGlwc2UsY2lyY2xlLHJlY3QscG9seWdvbixwb2x5bGluZSxsaW5lIHsgc3Ryb2tlLXdpZHRoOiAwOyB9QGtleWZyYW1lcyBsZC1icmVhdGgxIHsgICAgICAwJSB7ICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMC44Nik7ICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDAuODYpOyAgICAgIH0gICAgICA1MCUgeyAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlKDEuMDYpOyAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgxLjA2KTsgICAgICB9ICAgICAgMTAwJSB7ICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMC44Nik7ICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDAuODYpOyAgICAgIH0gICAgfSAgICBALXdlYmtpdC1rZXlmcmFtZXMgbGQtYnJlYXRoMSB7ICAgICAgMCUgeyAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlKDAuODYpOyAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgwLjg2KTsgICAgICB9ICAgICAgNDUlIHsgICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOiBzY2FsZSgwLjg2KTsgICAgICAgIHRyYW5zZm9ybTogc2NhbGUoMC44Nik7ICAgICAgfSAgICAgIDUwJSB7ICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMS4wNik7ICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDEuMDYpOyAgICAgIH0gICAgICA1NSUgeyAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06IHNjYWxlKDAuODYpOyAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgwLjg2KTsgICAgICB9ICAgICAgMTAwJSB7ICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTogc2NhbGUoMC44Nik7ICAgICAgICB0cmFuc2Zvcm06IHNjYWxlKDAuODYpOyAgICAgIH0gICAgfSAgICAubGQubGQtYnJlYXRoMSB7ICAgICAgLXdlYmtpdC1hbmltYXRpb246IGxkLWJyZWF0aCAxcyBpbmZpbml0ZTsgICAgICBhbmltYXRpb246IGxkLWJyZWF0aCAxcyBpbmZpbml0ZTsgICAgfSAgICA8L3N0eWxlPiAgPC9zdmc+PC9zdmc+');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    top: 9px;
+    left: 10px;
+    position: absolute;
+}
+#justroll-notify-close {
+  width: 25px;
+  height: 25px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  color: black;
+  cursor: pointer;
+  font-family: sans-serif;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #eee;
+  z-index: 10;
+  transition: all .1s ease-in-out;
+}
+#justroll-notify-close:hover {
+  background: #fff;
+  color: #333;
+}
+
+
+
+.jr-adv a {
+  display: inline-block;
+  height: 60px;
+  overflow: hidden;
+}
