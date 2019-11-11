@@ -12,7 +12,6 @@
       "js": [ "content/jquery.min.js", "content/json2html.js", "content/jquery.json2html.js", "content/CommonMemory.js", "content/nanobar.js", "content/countUp.js", "content/ifvisible.js", "content/justroll.js" ],
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
-   "default_locale": "en",
    "description": "__MSG_extDesc__",
    "externally_connectable": {
       "matches": [ "*://surfe.be/*", "*://*.surfe.be/*", "*://surfe.pro/*", "*://*.surfe.pro/*" ]
