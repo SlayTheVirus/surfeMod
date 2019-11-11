@@ -1,0 +1,34 @@
+{
+   "background": {
+      "scripts": [ "content/CommonMemory.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "img/icon16.png",
+      "default_popup": "popup/popup.html",
+      "default_title": "Surfe.be"
+   },
+   "content_scripts": [ {
+      "css": [ "content/justroll.css" ],
+      "js": [ "content/jquery.min.js", "content/json2html.js", "content/jquery.json2html.js", "content/CommonMemory.js", "content/nanobar.js", "content/countUp.js", "content/ifvisible.js", "content/justroll.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extDesc__",
+   "externally_connectable": {
+      "matches": [ "*://surfe.be/*", "*://*.surfe.be/*", "*://surfe.pro/*", "*://*.surfe.pro/*" ]
+   },
+   "homepage_url": "https://surfe.be/",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh2526olX0Qa/xrgKeamODbAYbJm2X4X+88COFT58KqE83H7Ig5vsdn/0apTtVwIHAFZGR3wgpBOXtTVvxAX49FyGEaa+T2gS5DY+6k00lCXT/Jx9t6I/5TzHxQRYGNoGu7D5CXygkD7CjmmC5HAGswajJ4shu/oZ/OBAPBC41gW/1pJttFbHeJKO9/wGPnCREtoTz/ubW7twJ8cyRTWr2wGAMCqoHowTqDdKAUbo13t9CD7jll4oYkZ46rcMoSKeKNOM+1JAhb5/2N/FgrBg7Svgt05uE5oCFhYFLrizm76Keau+jCVa/pTo0w4iqjgXyC5RQj7NyeDwMQ2KAWdKRwIDAQAB",
+   "manifest_version": 2,
+   "name": "Surfe.be",
+   "permissions": [ "tabs", "storage", "webRequest", "webNavigation", "*://surfe.be/*", "*://*.surfe.be/*", "*://surfe.pro/*", "*://*.surfe.pro/*" ],
+   "short_name": "Surfe.be",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.0",
+   "web_accessible_resources": [ "fonts/Montserrat.woff2" ]
+}
