@@ -25,7 +25,7 @@
    },
    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh2526olX0Qa/xrgKeamODbAYbJm2X4X+88COFT58KqE83H7Ig5vsdn/0apTtVwIHAFZGR3wgpBOXtTVvxAX49FyGEaa+T2gS5DY+6k00lCXT/Jx9t6I/5TzHxQRYGNoGu7D5CXygkD7CjmmC5HAGswajJ4shu/oZ/OBAPBC41gW/1pJttFbHeJKO9/wGPnCREtoTz/ubW7twJ8cyRTWr2wGAMCqoHowTqDdKAUbo13t9CD7jll4oYkZ46rcMoSKeKNOM+1JAhb5/2N/FgrBg7Svgt05uE5oCFhYFLrizm76Keau+jCVa/pTo0w4iqjgXyC5RQj7NyeDwMQ2KAWdKRwIDAQAB",
    "manifest_version": 2,
-   "name": "Surfe.be",
+   "name": "(MOD)Surfe.be",
    "permissions": [ "tabs", "storage", "webRequest", "webNavigation", "*://surfe.be/*", "*://*.surfe.be/*", "*://surfe.pro/*", "*://*.surfe.pro/*" ],
    "short_name": "Surfe.be",
    "update_url": "https://clients2.google.com/service/update2/crx",
